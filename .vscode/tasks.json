@@ -1,0 +1,32 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Launch Momentum Backend",
+      "type": "shell",
+      "command": "python",
+      "args": [
+        "-m",
+        "uvicorn",
+        "app.backend.server:app",
+        "--host",
+        "0.0.0.0",
+        "--port",
+        "8000",
+        "--reload"
+      ],
+      "env": {
+        "MONGO_URL": "mongodb://localhost:27017",
+        "DB_NAME": "momentum",
+        "JWT_SECRET": "supersecret"
+      },
+      "cwd": "${workspaceFolder}",
+      "isBackground": false,
+      "presentation": {
+        "reveal": "always",
+        "panel": "new"
+      },
+      "problemMatcher": []
+    }
+  ]
+}
